@@ -1,0 +1,31 @@
+<section>
+  <div class="container-fluid text-center bg-light py-3">
+    <h2>{{ bierChooser }}</h2>
+
+    <div class="container">
+      <div class="container d-flex justify-content-around">
+
+        <app-dunkel
+          [btnText]="dunkelBtnText"
+          (clickEvent)="setChoosenBier($event)"
+        ></app-dunkel>
+
+        <app-hell
+          [btnText]="hellBtnText"
+          (clickEvent)="setChoosenBier($event)"
+        ></app-hell>
+
+        <app-weizen
+          [btnText]="weizenBtnText"
+          (clickEvent)="setChoosenBier($event)"
+        ></app-weizen>
+      </div>
+
+      <div class="container" style="height: 400px">
+        <img [src]="imgUrl" alt="" class="img-fluid h-100" />
+      </div>
+      <button (click)="clearSide()" class="btn btn-outline-dark m-3 ">Clear</button>
+    </div>
+  </div>
+</section>
+
